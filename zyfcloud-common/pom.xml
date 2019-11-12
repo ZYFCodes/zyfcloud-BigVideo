@@ -12,7 +12,20 @@
     <artifactId>zyfcloud-common</artifactId>
 
     <dependencies>
-        <!-- log4j2 -->
+        <!-- 引入lombok：通过简单的注解的形式来简化消除一些必须有但显得很臃肿的Java代码的工具-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- 引入test：包含junit的，正常情况下是不需要再单独引用junit-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <!-- 引入log4j2 ：对所有日志框架制定的一种规范、标准、接口 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-log4j2</artifactId>
