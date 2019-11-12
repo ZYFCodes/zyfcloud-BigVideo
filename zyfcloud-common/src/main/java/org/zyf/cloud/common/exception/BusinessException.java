@@ -1,14 +1,11 @@
 package org.zyf.cloud.common.exception;
 
-import lombok.Data;
-
 /**
  * 描述：业务异常
  *
  * @author yanfengzhang
- * @date 2019-11-11 17:56
+ * @date 2019-11-12 14:20
  */
-@Data
 public class BusinessException extends RuntimeException {
     String returncode;
     String errormsg;

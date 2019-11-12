@@ -3,12 +3,12 @@ package org.zyf.cloud.common.exception;
 import org.apache.commons.lang3.math.NumberUtils;
 
 /**
- * 描述：内部异常封装
+ * 描述：
  *
  * @author yanfengzhang
  * @date 2019-11-11 18:13
  */
-public class InnerException extends RuntimeException {
+public class InnerException extends RuntimeException{
     protected int flag = -999;
 
     public InnerException(int errorCode, String message) {
@@ -22,7 +22,7 @@ public class InnerException extends RuntimeException {
     }
 
     public InnerException(Exception ex) {
-        super("[EXCEPTION:" + (ex == null ? "" : ex.getClass() + "]")
+        super("[EXCEPTION:" + (ex == null ? "" : new StringBuilder().append(ex.getClass()).append("]").toString())
                 + (ex == null ? "" : ex.getMessage()));
     }
 
