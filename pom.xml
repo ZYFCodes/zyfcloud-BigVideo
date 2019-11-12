@@ -10,6 +10,12 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>zyfcloud-common</module>
+        <module>zyfcloud-user</module>
+        <module>zyfcloud-order</module>
+        <module>zyfcloud-product</module>
+        <module>zyfcloud-video</module>
+        <module>zyfcloud-resource</module>
+        <module>zyfcloud-dashboard</module>
     </modules>
     <name>zyfcloud-BigVideo</name>
     <description>Example for Private BigVideo Project</description>

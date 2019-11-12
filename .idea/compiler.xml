@@ -6,6 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="zyfcloud-order" />
+        <module name="zyfcloud-resource" />
+        <module name="zyfcloud-product" />
+        <module name="zyfcloud-user" />
+        <module name="zyfcloud-dashboard" />
+        <module name="zyfcloud-video" />
         <module name="zyfcloud-common" />
       </profile>
     </annotationProcessing>
