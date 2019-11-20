@@ -11,7 +11,8 @@ import lombok.Data;
 @Data
 public class ErrorInfo<T> {
     public static final Integer SUCCESS = 200;
-    public static final Integer ERROR = 100;
+    public static final Integer ERROR = 999;
+    public static final String ERRORCODE = "-999";
 
     /**
      * 错误码

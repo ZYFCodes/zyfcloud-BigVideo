@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.zyf.cloud.common.exception.BusinessException;
+import org.zyf.cloud.common.exception.IllegalBizArgumentException;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -20,9 +21,16 @@ public class GlobalDefaultExceptionHandler {
     public ErrorInfo defaultErrorHandler(HttpServletRequest req, Exception e) throws Exception {
         ErrorInfo errorInfo = new ErrorInfo();
         if (e instanceof BusinessException) {
-            errorInfo.setErrorCode(((BusinessException) e).getReturncode());
+            BusinessException businessException = (BusinessException) e;
+            errorInfo.setCode(businessException.getErrorCode());
+            errorInfo.setErrorCode(businessException.getReturncode());
+        } else if (e instanceof IllegalBizArgumentException) {
+            IllegalBizArgumentException illegalBizArgumentException = (IllegalBizArgumentException) e;
+            errorInfo.setCode(illegalBizArgumentException.getErrorCode());
+            errorInfo.setErrorCode(illegalBizArgumentException.getReturncode());
         } else {
             errorInfo.setCode(ErrorInfo.ERROR);
+            errorInfo.setErrorCode(ErrorInfo.ERRORCODE);
         }
         errorInfo.setMessage(e.getMessage());
         errorInfo.setUrl(req.getRequestURI());
