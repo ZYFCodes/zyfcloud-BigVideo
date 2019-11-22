@@ -55,6 +55,17 @@
             <artifactId>commons-lang3</artifactId>
             <version>3.3.2</version>
         </dependency>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+        </dependency>
+
+        <!--Use Java Protocol Buffers -->
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java</artifactId>
+            <version>3.10.0</version>
+        </dependency>
     </dependencies>
 
     <build>
