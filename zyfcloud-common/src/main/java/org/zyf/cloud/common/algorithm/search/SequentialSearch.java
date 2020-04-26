@@ -16,13 +16,16 @@ public class SequentialSearch {
      */
     public static int sequentialSearch(int[] srcArray, int endOfArray, int key) {
         int i;
-        srcArray[0] = key;// 设置srcArray[0]为关键字值，即“哨兵”
-        i = endOfArray;// 循环从数组尾部开始
+        /**设置srcArray[0]为关键字值，即“哨兵”*/
+        srcArray[0] = key;
+        /**循环从数组尾部开始*/
+        i = endOfArray;
         while (key != srcArray[i]) {
             i--;
         }
 
-        return i;// 返回0则说明查找失败
+        /**返回0则说明查找失败*/
+        return i;
     }
 
     /**

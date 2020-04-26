@@ -26,10 +26,10 @@ public class InsertValueSearch {
         }
         int mid = start + (end - start) * ((key - srcArray[start]) / (srcArray[end] - srcArray[start]));
         if (srcArray[mid] > key) {
-            // 说明key在前半部分
+            /*说明key在前半部分*/
             return insertValueSearch(srcArray, key, start, mid - 1);
         } else if (srcArray[mid] < key) {
-            // 说明key在前半部分
+            /*说明key在前半部分*/
             return insertValueSearch(srcArray, key, mid + 1, end);
         } else {
             return mid;

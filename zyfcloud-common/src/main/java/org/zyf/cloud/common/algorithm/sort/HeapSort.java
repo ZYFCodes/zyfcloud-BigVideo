@@ -91,25 +91,25 @@ public class HeapSort {
      * @return int[]
      */
     private static int[] insertData(int[] array, int data) {
-        // 将新节点放在堆的末端
+        /**将新节点放在堆的末端*/
         array[array.length - 1] = data;
-        // 需要调整的节点
+        /**需要调整的节点*/
         int k = array.length - 1;
-        // 双亲节点
+        /**双亲节点*/
         int parent = (k - 1) / 2;
         while (parent >= 0 && data > array[parent]) {
-            // 双亲节点下调
+            /**双亲节点下调*/
             array[k] = array[parent];
             k = parent;
             if (parent != 0) {
-                // 继续向上比较
+                /**继续向上比较*/
                 parent = (parent - 1) / 2;
             } else {
-                // 根节点已调整完毕，跳出循环
+                /**根节点已调整完毕，跳出循环*/
                 break;
             }
         }
-        // 将插入的结点放到正确的位置
+        /**将插入的结点放到正确的位置*/
         array[k] = data;
         return array;
     }
@@ -124,12 +124,12 @@ public class HeapSort {
         HeapSort hs = new HeapSort();
         int[] array = {87, 45, 78, 32, 17, 65, 53, 9, 122};
         System.out.print("构建大根堆：");
-        hs.toString(hs.buildMaxHeap(array));
+        hs.toString(buildMaxHeap(array));
         System.out.print("\n" + "删除堆顶元素：");
-        hs.toString(hs.deleteMax(array));
+        hs.toString(deleteMax(array));
         System.out.print("\n" + "插入元素63:");
-        hs.toString(hs.insertData(array, 63));
+        hs.toString(insertData(array, 63));
         System.out.print("\n" + "大根堆排序：");
-        hs.toString(hs.heapSort(array));
+        hs.toString(heapSort(array));
     }
 }
